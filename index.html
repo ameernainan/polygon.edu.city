@@ -26,8 +26,26 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Background Video -->
     <section class="hero" id="home">
+        <div class="hero-video-wrapper">
+            <video 
+                class="hero-video"
+                autoplay 
+                muted 
+                loop 
+                playsinline 
+                preload="none"
+                poster="images/img1.jpg"
+                aria-hidden="true">
+                <source src="vdeo/video1.mp4" type="video/mp4">
+                <!-- Optional: better compression/fallback -->
+                <!-- <source src="images/hero-video.webm" type="video/webm"> -->
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+
         <div class="hero-content">
             <h1>Unlock Innovation Through Hands-On Mastery</h1>
             <p>At POLYGON EDUCITY, we empower students with real-world skills in state-of-the-art facilities, turning curiosity into capability.</p>
