@@ -257,7 +257,7 @@ img {
     .values-grid {
         grid-template-columns: 1fr;
         gap: 1.2rem;
-        padding: 0 2%;
+        padding: 0 0.1%;
     }
 
     .value-card {
@@ -716,3 +716,4 @@ img {
         animation: none;
     }
 }
+
