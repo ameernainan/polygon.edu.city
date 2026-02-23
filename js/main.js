@@ -190,6 +190,7 @@ function init() {
     }
 
     initEventListeners();
+    initDarkMode();
     console.log('POLYGON EDUCITY frontend initialized');
 }
 
@@ -198,3 +199,48 @@ if (document.readyState === 'loading') {
 } else {
     init();
 }
+
+// Dark Mode Toggle – single icon swap + persistence
+function initDarkMode() {
+    const toggle = document.querySelector('.theme-toggle');
+    if (!toggle) {
+        console.warn('Theme toggle button not found');
+        return;
+    }
+
+    const icon = toggle.querySelector('.theme-icon');
+    if (!icon) {
+        console.warn('Theme icon span not found');
+        return;
+    }
+
+    // Load saved preference or system preference
+    let savedMode = localStorage.getItem('darkMode');
+    if (!savedMode) {
+        savedMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        localStorage.setItem('darkMode', savedMode);
+    }
+
+    // Apply initial state
+    if (savedMode === 'dark') {
+        document.body.classList.add('dark');
+        icon.textContent = '☀️'; // sun in dark mode
+    } else {
+        icon.textContent = '🌙'; // moon in light mode
+    }
+
+    // Click handler
+    toggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        const isDark = document.body.classList.contains('dark');
+        icon.textContent = isDark ? '☀️' : '🌙';
+        localStorage.setItem('darkMode', isDark ? 'dark' : 'light');
+
+        // Gentle click feedback
+        toggle.style.transform = 'scale(1.2)';
+        setTimeout(() => { toggle.style.transform = ''; }, 150);
+    });
+
+    console.log('Dark mode initialized – current mode:', savedMode);
+}
+
