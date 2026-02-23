@@ -256,7 +256,7 @@ img {
 
     .values-grid {
         grid-template-columns: 1fr;
-        gap: 4.2rem;
+        gap: 1.2rem;
         padding: 0 2%;
     }
 
@@ -264,7 +264,7 @@ img {
         width: 98%;
         max-width: 100vw;
         margin: 0 auto;
-        padding: 1.4rem 2rem 3.2rem;
+        padding: 1rem 2rem 2.2rem;
         background: var(--card-bg);
         border-radius: 28px;
         box-shadow: var(--card-shadow);
@@ -311,12 +311,12 @@ img {
 /* Desktop – refined large cards */
 @media (min-width: 1200px) {
     .values-grid {
-        gap: 3rem;
+        gap: 1.5rem;
         padding: 0 4rem;
     }
 
     .value-card {
-        padding: 1.8rem 0.8rem;
+        padding: 1.8rem 0.5rem;
         border-radius: 28px;
         box-shadow: var(--card-shadow);
     }
